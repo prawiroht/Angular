@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>{{label}}</p>
+    <input [id]="id" type="text" value="ogya"/>
+    <input disabled="false" id="{{id}}" type="text" value="ogya"/>
+
+    <h2 class="text-success">TEST</h2>              <!-- declare class biasa -->
+    <h2 [class]="successClass">TEST</h2>            <!-- declare class pake binding -->
+    <h2 [class.text-danger]="hasError">TEST</h2>    <!-- declare class pake binding boolean -->
+    <h2 [ngClass]="messageClass">TEST</h2>          <!-- declare class gapaham gimana tapi binding juga -->
+
+    <!-- <h2> Hallo {{name}}</h2>
+    <button (click)="onClick($event)">Hallo</button> -->
+    <input type="text" #myInput>
+    <button (click)="onClick(myInput.value)">Get Input</button>
+        
+    <input type="text" [(ngModel)]="name">
+    {{name}}
+
+    <h2 *ngIf="displayName; else elseBlock">
+        Wiro
+    </h2>
+    <ng-template #elseBlock>
+        <h2>
+            Hidden name.
+        </h2>
+    </ng-template>
+
+ <div [ngSwitch]="color">
+     <p *ngSwitchCase="'red'">Merah</p>
+     <p *ngSwitchCase="'blue'">Biru</p>
+ </div>
+ <div *ngFor="let color of colors">
+     <p>{{color}}</p>
+ </div>
+
+</body>
+</html>
+

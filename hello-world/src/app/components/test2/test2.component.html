@@ -1,0 +1,7 @@
+<div class="parent">
+    <p><b>{{clickCount}}</b></p>
+</div>
+
+<div class="child">
+    <app-child [childTitle]="title" (onChanged)="onChangedEvent($event)"></app-child>
+</div>

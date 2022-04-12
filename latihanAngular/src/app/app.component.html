@@ -1,0 +1,14 @@
+<h2>Siapa yang setuju One Piece keren?</h2>
+<h3 [class.text-success]="agreeColor()">
+  Setuju: {{agreed}}
+</h3>
+<h3 [class.text-danger]="disagreeColor()">
+  Tidak Setuju: {{disagreed}}
+</h3>
+
+<app-voter *ngFor="let voter of voters"
+[name]="voter|uppercase"
+(voted)="onVoted($event)">
+</app-voter>
+
+<app-ganteng></app-ganteng>
